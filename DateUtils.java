@@ -5,8 +5,12 @@ public class DateUtils {
     //PRE: accepts a string from input file field: hh::mm mm/dd/yyyy
     //POST: returns an integer array that includes month, day, year
     public static int[] parseDateTime(String date) {
-
-        return new int[]{0,0,0};
+        String[] part1 = date.split(" ");
+        String[] parts = part1[0].split("/");
+        int month = Integer.parseInt(parts[0]);
+        int day = Integer.parseInt(parts[1]);
+        int year = Integer.parseInt(parts[2]);
+        return new int[]{month, day, year};
     }
 
     //PRE: accepts a string from input file field: mm/dd/yyy
